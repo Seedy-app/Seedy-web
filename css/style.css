@@ -1,0 +1,447 @@
+
+:root {
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    --primario: #006400; /* Cambia este color al verde oscuro que desees */
+    --gris: #e1e1e1;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1 rem = 10px */
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+
+/** Globales **/
+.contenedor {
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+    margin-top: 0; /* Eliminar el espacio superior predeterminado de los títulos */
+    margin-bottom: 20px; /* Agregar un margen inferior a los títulos */
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 4rem;
+    color: #074007;
+}
+
+h3 {
+    color: #074007;
+    font-size: 3.2rem;
+    margin-top: 6rem; /* Ajustar el margen superior según sea necesario */
+}
+
+h4 {
+    color: #074007;
+    font-size: 2.8rem;
+}
+
+img {
+    margin-bottom: 30px;
+    max-width: 100%;
+}
+
+p {
+    margin-bottom: 40px; /* Agregar un margen inferior a los párrafos */
+}
+
+/* Agregar un margen entre h3 y h4 */
+.separacion + h4 {
+    margin-top: 30px;
+}
+
+/* Estilos para h3 con clase separacion */
+h3.separacion {
+    color: #074007;
+    margin-top: 3rem; /* Por ejemplo, ajusta el espacio superior según lo necesites */
+}
+
+/* Estilos para p seguido de h3 con clase separacion */
+p + h3.separacion {
+    color: #074007;
+    margin-top: 1rem; /* Reducir el margen superior entre el párrafo y h3 */
+}
+
+/** Utilidades **/
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.centrar-texto {
+    text-align: left;
+}
+
+/** Header **/
+.header {
+    margin-bottom: 50px;
+    background-color: var(--primario); /* Fondo verde oscuro para el encabezado */
+    height: 10rem; /* Altura del encabezado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    margin-bottom: 0px;
+    width: 90%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.header__texto {
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 1rem; /* Pequeño margen superior para separar el texto */
+}
+
+@media (min-width: 768px) {
+    .header__texto {
+        margin-top: 15rem;
+    }
+}
+
+.barra {
+    padding-top: 4rem;
+}
+
+@media (min-width: 768px) {
+    .barra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* Estilo para el logo */
+.logo {
+    margin-bottom: 35px;
+    margin-left: 10px;
+    color: var(--blanco);
+    max-width: 100%;
+    display: flex; /* Usamos flexbox para centrar el logo verticalmente */
+    align-items: center; /* Centramos verticalmente el contenido */
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .logo {
+        margin-left: 5px; /* Reducción del margen izquierdo */
+        max-width: 80%; /* Limitar el ancho máximo del logo para que se ajuste dentro del header */
+        justify-content: flex-start; /* Alineamos el contenido al principio */
+    }
+}
+
+
+
+.logo__nombre {
+    font-weight: 400;
+}
+
+.logo__bold {
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+/* Estilo inicial para los enlaces de navegación */
+.navegacion__enlace {
+    margin-right: 100px;
+    padding-right: 10px;
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--blanco); /* Color blanco inicial */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Agregamos transición suave para el cambio de color y sombra de texto */
+}
+
+/* Estilo al pasar el cursor sobre los enlaces */
+.navegacion__enlace:hover {
+    color: #ffffff; /* Cambio a un blanco puro al pasar el cursor */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Agregar una sombra brillante al texto */
+}
+
+@media (min-width: 768px) {
+    .contenido-principal {
+        margin-top: 0px;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+
+.entrada {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.entrada:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+
+.boton {
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        display: inline-block;
+    }
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton--primario {
+    background-color: #074007;
+}
+
+.boton--secundario {
+    background-color: var(--primario);
+}
+
+.cursos {
+    list-style: none;
+}
+
+.widget-curso {
+    margin-bottom: 1000px;
+    border-bottom: 1px solid var(--gris);
+}
+
+.widget-curso:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+
+.widget-curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+
+.widget-curso__info {
+    font-weight: normal;
+}
+
+.widget-curso__label,
+.widget-curso__info {
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+
+.footer {
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
+}
+
+/** Sobre Nosotros **/
+@media (min-width: 768px) {
+    .sobre-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+/** Cursos **/
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+
+@media (min-width: 768px) {
+    .curso {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+}
+
+.curso:last-of-type {
+    border: none;
+}
+
+.curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+
+.curso__info {
+    font-weight: normal;
+}
+
+.curso__label,
+.curso__info {
+    font-size: 2rem;
+}
+
+/** Contacto **/
+.contacto-bg {
+    border: 2px solid #ccc; /* Color y grosor del borde */
+    padding: 20px; /* Espaciado interno */
+    width: fit-content; /* Ajustar el ancho al contenido */
+}
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.campo__label {
+    color: #074007;
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.campo__field {
+    flex: 1;
+    border: 1px solid var(--gris);
+}
+
+.campo__field--textarea {
+    height: 20rem;
+}
+
+.sobre-nosotros {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección del flexbox */
+    align-items: center; /* Alinea los elementos al centro */
+    text-align: center; /* Centra el texto */
+}
+
+.sobre-nosotros__texto,
+.sobre-nosotros__imagen {
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.sobre-nosotros__imagen img {
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+    display: block; /* Elimina espacios verticales */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+/*Banner*/
+.banner {
+    width: 100%;
+    overflow: hidden;
+    margin-top: -50px; /* Movemos el banner un poco más hacia arriba */
+}
+
+.banner img {
+    width: 100%;
+    display: block;
+    margin-top: -35px; /* Recortamos un poco más la parte superior del banner */
+}
+
+.texto-superpuesto {
+    position: absolute;
+    top: 30%; /* Posición vertical en el 35% del banner */
+    left: 50%; /* Posición horizontal en el centro */
+    transform: translate(-50%, -50%);
+    color: #ffffff; /* Color blanco para el texto */
+    font-size: 3rem; /* Tamaño del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+    text-align: center; /* Alineación centrada */
+}
+
+/* Para hacerlo responsive */
+@media (max-width: 768px) {
+    .texto-superpuesto {
+        font-size: 2rem; /* Tamaño del texto para dispositivos más pequeños si es necesario */
+        top: 23%; /* Posición vertical en el 40% del banner para dispositivos móviles */
+    }
+}
+
+.blog {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.footer {
+    background-color: var(--primario); /* Color de fondo verde oscuro */
+    padding: 20px 0; /* Espaciado interno superior e inferior */
+    color: #ffffff; /* Color del texto en el footer */
+}
+
+.main__descarga {
+    text-align: center; /* Centrar el texto */
+    margin-top: 2rem; /* Ajustar el margen superior */
+}
+
+.main__descarga a {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #006400; /* Color del texto inicial (verde oscuro) */
+    text-decoration: none; /* Quita la decoración del enlace */
+    transition: color 0.3s ease; /* Agrega transición suave al color del texto */
+}
+
+.contactate a {
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #006400; /* Color del texto inicial (verde oscuro) */
+    text-decoration: none; /* Quita la decoración del enlace */
+    transition: color 0.3s ease; /* Agrega transición suave al color del texto */
+}
+
+.contactate main__descarga a:hover {
+    color: #32cd32; /* Color del texto al pasar el cursor (verde claro) */
+}
